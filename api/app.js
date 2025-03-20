@@ -46,7 +46,7 @@ mongoose
   .catch((err) => console.error("Error al conectar a MongoDB", err));
 
 /* Servir archivos estáticos */
-app.use(express.static("dist")); // Servir archivos estáticos de la carpeta dist
+app.use(express.static("public")); // Servir archivos estáticos de la carpeta dist
 app.use("/uploads", express.static("uploads"));
 
 const path = require("path"); // Importar el módulo path
@@ -58,6 +58,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1", routesConfig);
+app.use("/*", (req, res, next) =>
+  res.sendFile(`${__dirname}/public/index.html`)
+);
 
 /* Manejo de errores */
 app.use((err, req, res, next) => {

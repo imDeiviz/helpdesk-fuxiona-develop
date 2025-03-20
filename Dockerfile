@@ -1,30 +1,34 @@
-# Usar la imagen base de Node.js
-FROM node:18
+FROM node:18.19.0 as builder
 
-# Crear un directorio de trabajo
-WORKDIR /usr/src/app
+ARG VITE_API_URL
+ENV VVITE_API_URL=$VITE_API_URL
 
-COPY package*.json ./
+WORKDIR /app
 
-# Instalar las dependencias
+COPY ./web/package.json /app
+COPY ./web/package-lock.json /app
+
 RUN npm install
 
-# Copiar los archivos de la API
-COPY api/package*.json ./api/
-# Instalar las dependencias de la API
-RUN npm install --prefix ./api
+COPY ./web /app
 
-# Copiar los archivos de la aplicación web
-COPY web/package*.json ./web/
-# Instalar las dependencias de la aplicación web
-RUN npm install --prefix ./web
+RUN npm run build
 
-# Copiar el resto del código de la API y la aplicación web
-COPY api/ ./api/
-COPY web/ ./web/
+# build api
+FROM node:18.19.0
 
-# Exponer los puertos necesarios
-EXPOSE 3000 5173
+WORKDIR /app
 
-# Comando para iniciar la API
-CMD ["npm", "run", "dev", "--prefix", "api"]
+COPY ./api/package.json /app
+COPY ./api/package-lock.json /app
+
+RUN npm install
+
+COPY ./api /app
+
+# copy web into api
+COPY --from=builder /app/dist /app/public
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

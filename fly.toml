@@ -1,12 +1,14 @@
-# fly.toml app configuration file generated for helpdesk-fuxiona-v2-0 on 2025-03-17T05:59:19+01:00
+# fly.toml app configuration file generated for helpdesk-fuxiona-develop on 2025-03-20T18:52:43+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'helpdesk-fuxiona-v2-0'
+app = 'helpdesk-fuxiona-develop'
 primary_region = 'mad'
 
 [build]
+[build.args]
+  VITE_API_URL = 'https://helpdesk-fuxiona-develop.fly.dev/api/v1'
 
 [http_service]
   internal_port = 3000
