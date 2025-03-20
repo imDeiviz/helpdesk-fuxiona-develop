@@ -8,6 +8,9 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   server: {
+    server: {
+      https: true, // Fuerza HTTPS en el servidor de desarrollo
+    },
     proxy: {
       '/api': {
         target: 'http://localhost:3000',
