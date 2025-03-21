@@ -27,7 +27,10 @@ const Navbar = ({ toggleSidebar }) => {
           
           <BsNavbar.Brand as={Link} to="/dashboard" className="d-flex align-items-center">
             <span style={{ color: '#b000e8', fontWeight: 'bold' }}>Helpdesk</span>
-            <span className="ms-1 fw-light">Portal</span>
+            <img src="../src/images/fuxionavecfinal.jpg" alt="Fuxiona" className="ms-1" style={{ width: '100px', height: 'auto' }} />
+
+
+
           </BsNavbar.Brand>
         </div>
 
