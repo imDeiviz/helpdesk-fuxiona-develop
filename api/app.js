@@ -54,7 +54,8 @@ const path = require("path"); // Importar el módulo path
 /* API Routes Configuration */
 const routesConfig = require("./config/routes.config");
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../dist/index.html")); // Servir el archivo index.html
+  res.sendFile(path.join(__dirname, "public", "index.html")); // Servir el archivo index.html
+
 });
 
 app.use("/api/v1", routesConfig);
