@@ -6,7 +6,8 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/web/", // Cambia esto si hay problemas con rutas
+  base: "./", // Cambia esto si hay problemas con rutas
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')
