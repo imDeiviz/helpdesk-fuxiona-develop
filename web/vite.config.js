@@ -16,8 +16,9 @@ export default defineConfig({
 
   plugins: [react()],
   optimizeDeps: {
-    exclude: ['lucide-react'],
+    exclude: [],
   },
+
   server: {
     server: {
       https: true, // Fuerza HTTPS en el servidor de desarrollo
