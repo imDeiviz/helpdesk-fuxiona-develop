@@ -3,7 +3,8 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './styles.css'; // Updated import to styles.css
+
 
 // Componentes de Autenticación
 import Login from './pages/Login';

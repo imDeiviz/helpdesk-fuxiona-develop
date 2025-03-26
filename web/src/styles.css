@@ -1,0 +1,95 @@
+:root {
+    --primary-color: #b000e8;
+    --primary-light: #d980f5;
+    --primary-dark: #8600b3;
+    --white: #ffffff;
+    --black: #000000;
+    --gray-light: #f8f9fa;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: url('/src/images/fondo.jpg');
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    color: var(--gray-dark);
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(176, 0, 232, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Custom Form Styles */
+
+/* Button Text Color */
+.btn {
+    color: white; /* Set button text color to white */
+}
+
+/* Button Styles for Deleting Users */
+.btn-danger {
+    background-color: #dc3545; /* Red background */
+    color: white; /* White text */
+}
+
+.form-control:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.25rem rgba(176, 0, 232, 0.25);
+}
+
+/* Dashboard Cards */
+.stat-card {
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Incident Priority Colors */
+.priority-high {
+    color: #dc3545;
+}
+
+.priority-medium {
+    color: #fd7e14;
+}
+
+.priority-low {
+    color: #198754;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
