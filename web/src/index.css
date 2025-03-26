@@ -22,8 +22,21 @@
     background-color: var(--primary-color);
     border-color: var(--primary-color);
   }
+
+  /* Bootstrap Button Class */
+  .btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
   
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+  }
+  
+  /* Bootstrap Button Hover States */
+  .btn:hover, .btn:focus, .btn:active {
     background-color: var(--primary-dark);
     border-color: var(--primary-dark);
   }
@@ -51,6 +64,12 @@
     font-weight: 700;
     color: var(--primary-color);
   }
+
+  /* Bootstrap Navbar Class */
+  .navbar {
+    background-color: var(--white);
+  }
+
   
   .nav-link.active {
     color: var(--primary-color) !important;
@@ -63,6 +82,12 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s, box-shadow 0.2s;
   }
+
+  /* Bootstrap Card Class */
+  .card {
+    border: 1px solid #dee2e6;
+  }
+
   
   .card:hover {
     transform: translateY(-5px);

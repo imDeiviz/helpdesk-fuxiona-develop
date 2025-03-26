@@ -259,7 +259,7 @@ const Dashboard = () => {
             <Card.Body>
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <h5 className="card-title mb-0">Incidencias Recientes</h5>
-                <Link to="/incidents" className="btn btn-sm btn-outline-primary">Ver todas</Link>
+                <Link to="/incidents" className="btn btn-sm btn-primary">Ver todas</Link>
               </div>
 
               {recentIncidents.length > 0 ? (

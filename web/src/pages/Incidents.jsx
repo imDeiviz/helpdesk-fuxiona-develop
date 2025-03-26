@@ -306,8 +306,9 @@ const Incidents = () => {
                       <td>
                         <Link
                           to={`/incidents/${incident._id}`}
-                          className="btn btn-sm btn-outline-primary"
+                          className="btn btn-sm btn-primary"
                         >
+
                           Ver
                         </Link>
                       </td>
